@@ -17,7 +17,7 @@ namespace AgroMonitoringApi.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.7")
+                .HasAnnotation("ProductVersion", "9.0.15")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -28,21 +28,41 @@ namespace AgroMonitoringApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<double>("Humi")
+                    b.Property<double>("Humidity")
                         .HasColumnType("double precision");
 
-                    b.Property<float>("Lux")
+                    b.Property<float>("Light")
                         .HasColumnType("real");
+
+                    b.Property<string>("Phytolamp")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("SoilStatus")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<double>("Temp")
+                    b.Property<double>("Temperature")
                         .HasColumnType("double precision");
 
                     b.Property<DateTime>("Time")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Ventilation")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Watering")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Window")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 

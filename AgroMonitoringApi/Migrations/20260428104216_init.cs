@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AgroMonitoringApi.Migrations
 {
     /// <inheritdoc />
-    public partial class AddLogsToDb : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,10 +17,15 @@ namespace AgroMonitoringApi.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Time = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    Temp = table.Column<double>(type: "double precision", nullable: false),
-                    Humi = table.Column<double>(type: "double precision", nullable: false),
-                    Lux = table.Column<float>(type: "real", nullable: false),
-                    Status = table.Column<string>(type: "text", nullable: false)
+                    Temperature = table.Column<double>(type: "double precision", nullable: false),
+                    Humidity = table.Column<double>(type: "double precision", nullable: false),
+                    Light = table.Column<float>(type: "real", nullable: false),
+                    Status = table.Column<string>(type: "text", nullable: false),
+                    SoilStatus = table.Column<string>(type: "text", nullable: false),
+                    Ventilation = table.Column<string>(type: "text", nullable: false),
+                    Watering = table.Column<string>(type: "text", nullable: false),
+                    Window = table.Column<string>(type: "text", nullable: false),
+                    Phytolamp = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
